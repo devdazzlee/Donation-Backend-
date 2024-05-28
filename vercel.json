@@ -5,26 +5,6 @@
         "src": "server.js",
         "use": "@vercel/node"
       }
-    ],
-    "routes": [
-      { "handle": "filesystem" },
-      {
-        "src": "/signup",
-        "dest": "server.js"
-      },
-      {
-        "src": "/login",
-        "dest": "server.js"
-      },
-      {
-        "src": "/create-campaign",
-        "dest": "server.js"
-      },
-      {
-        "src": "/campaigns",
-        "dest": "server.js"
-      }
-      
     ]
   }
   
