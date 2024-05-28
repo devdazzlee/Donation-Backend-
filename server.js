@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 app.post('/signup', async (req, res) => {
     try {
       const { userName, email, password } = req.body;
-  
+  console.log(req.body)
       // Check if the email already exists
       const existingUser = await userModel.findOne({ email });
       if (existingUser) {
