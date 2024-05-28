@@ -61,28 +61,55 @@ app.post('/login', async (req, res) => {
   
 // Campaign Schema
 
+
 app.post('/create-campaign', async (req, res) => {
-    try {
-        const { studentName, educationalLevel, description, requiredAmount, userId } = req.body;
+  try {
+      const {
+          firstName,
+          lastName,
+          email,
+          birthDate,
+          phoneNumber,
+          city,
+          address,
+          educationLevel,
+          fundType,
+          scholarshipTitle,
+          scholarshipReason,
+          familyMembers,
+          householdIncome,
+          donationAmount // Assuming this field is related to the campaign
+      } = req.body;
 
-        // Create a new campaign instance
-        const newCampaign = new campaignModel({
-            studentName,
-            educationalLevel,
-            description,
-            requiredAmount,
-            userId,
-        });
+      // Create a new campaign instance
+      const newCampaign = new campaignModel({
+          firstName,
+          lastName,
+          email,
+          birthDate,
+          phoneNumber,
+          city,
+          address,
+          educationLevel,
+          fundType,
+          scholarshipTitle,
+          scholarshipReason,
+          familyMembers,
+          householdIncome,
+          donationAmount // Assuming this field is related to the campaign
+      });
 
-        // Save the campaign to the database
-        await newCampaign.save();
+      // Save the campaign to the database
+      await newCampaign.save();
 
-        res.status(201).json({ message: 'Campaign created successfully' });
-    } catch (error) {
-        console.error('Error creating campaign:', error);
-        res.status(500).json({ message: 'Internal server error' });
-    }
+      res.status(201).json({ message: 'Campaign created successfully' });
+  } catch (error) {
+      console.error('Error creating campaign:', error);
+      res.status(500).json({ message: 'Internal server error' });
+  }
 });
+
+
 app.get('/campaigns', async (req, res) => {
     try {
       const campaigns = await campaignModel.find();

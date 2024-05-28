@@ -13,13 +13,22 @@ const userModel = mongoose.model('Users', userSchema);
 
 // Campaign Schema
 const campaignSchema = new mongoose.Schema({
-    studentName: { type: String, required: true },
-    educationalLevel: { type: String, required: true },
-    description: { type: String, required: true },
-    requiredAmount: { type: Number, required: true },
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'Users', required: true },
-    createdOn: { type: Date, default: Date.now },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    email: { type: String, required: true },
+    birthDate: { type: Date, required: true },
+    phoneNumber: { type: String, required: true },
+    city: { type: String, required: true },
+    address: { type: String, required: true },
+    educationLevel: { type: String, required: true },
+    fundType: { type: String, required: true },
+    scholarshipTitle: { type: String, required: true },
+    scholarshipReason: { type: String, required: true },
+    familyMembers: { type: Number, required: true },
+    householdIncome: { type: String, required: true },
+    createdOn: { type: Date, default: Date.now }
 });
+
 
 export const campaignModel = mongoose.model('Campaign', campaignSchema);
 
