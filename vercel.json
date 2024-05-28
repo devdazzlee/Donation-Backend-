@@ -1,0 +1,30 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      { "handle": "filesystem" },
+      {
+        "src": "/api/signup",
+        "dest": "server.js"
+      },
+      {
+        "src": "/api/login",
+        "dest": "server.js"
+      },
+      {
+        "src": "/api/create-campaign",
+        "dest": "server.js"
+      },
+      {
+        "src": "/api/campaigns",
+        "dest": "server.js"
+      }
+      
+    ]
+  }
+  
