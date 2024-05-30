@@ -78,9 +78,10 @@ app.post('/create-campaign', async (req, res) => {
           scholarshipReason,
           familyMembers,
           householdIncome,
-          donationAmount // Assuming this field is related to the campaign
+          amountNeeded // Assuming this field is related to the campaign
       } = req.body;
-
+console.log( "House  ", householdIncome)
+console.log(  "Rquired Amount", amountNeeded)
       // Create a new campaign instance
       const newCampaign = new campaignModel({
           firstName,
@@ -96,7 +97,7 @@ app.post('/create-campaign', async (req, res) => {
           scholarshipReason,
           familyMembers,
           householdIncome,
-          donationAmount // Assuming this field is related to the campaign
+          amountNeeded // Assuming this field is related to the campaign
       });
 
       // Save the campaign to the database

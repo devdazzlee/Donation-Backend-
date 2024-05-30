@@ -26,6 +26,7 @@ const campaignSchema = new mongoose.Schema({
     scholarshipReason: { type: String, required: true },
     familyMembers: { type: Number, required: true },
     householdIncome: { type: String, required: true },
+    amountNeeded:{type: String, required: true},
     createdOn: { type: Date, default: Date.now }
 });
 
